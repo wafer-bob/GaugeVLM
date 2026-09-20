@@ -61,27 +61,27 @@
     const target = G.position(state.distance, state.clock);
     const nodes = [];
     const floor = [ { x: -3.7, y: 0, z: -3.7 }, { x: 3.7, y: 0, z: -3.7 }, { x: 3.7, y: 0, z: 3.7 }, { x: -3.7, y: 0, z: 3.7 } ];
-    nodes.push(el('polygon', { points: pointString(floor), fill: '#f3f5f8', stroke: '#d9dee6', 'stroke-width': '1' }));
+    nodes.push(el('polygon', { points: pointString(floor), fill: '#f6f9ff', stroke: '#cddcef', 'stroke-width': '1' }));
     for (let index = -3; index <= 3; index++) {
-      nodes.push(line({ x: index, y: 0, z: -3.7 }, { x: index, y: 0, z: 3.7 }, { stroke: '#e0e4ea', 'stroke-width': '.8' }));
-      nodes.push(line({ x: -3.7, y: 0, z: index }, { x: 3.7, y: 0, z: index }, { stroke: '#e0e4ea', 'stroke-width': '.8' }));
+      nodes.push(line({ x: index, y: 0, z: -3.7 }, { x: index, y: 0, z: 3.7 }, { stroke: '#dbe5f2', 'stroke-width': '.8' }));
+      nodes.push(line({ x: -3.7, y: 0, z: index }, { x: 3.7, y: 0, z: index }, { stroke: '#dbe5f2', 'stroke-width': '.8' }));
     }
     const ring = Array.from({ length: 73 }, (_, i) => G.position(state.distance, i / 6));
-    nodes.push(el('polyline', { points: pointString(ring), fill: 'none', stroke: '#bdc6d7', 'stroke-width': '1', 'stroke-dasharray': '3 5' }));
+    nodes.push(el('polyline', { points: pointString(ring), fill: 'none', stroke: '#acbfdc', 'stroke-width': '1', 'stroke-dasharray': '3 5' }));
     nodes.push(line({ x: 0, y: .025, z: 0 }, { x: 0, y: .025, z: -3.15 }, { stroke: '#477ac6', 'stroke-width': '1.5', 'marker-end': 'url(#lab-arrow)' }));
     [12, 3, 6, 9].forEach(hour => {
       const label = project(G.position(3.95, hour));
       nodes.push(el('text', { x: label.x, y: label.y + 4, 'text-anchor': 'middle', class: 'lab-floor-label' }, `${hour}`));
     });
     nodes.push(line({ x: 0, y: .02, z: 0 }, { ...target, y: .02 }, { class: 'lab-distance-line' }));
-    const cubes = [ { position: { x: 0, y: 0, z: 0 }, palette: ['#b5c8e6', '#7194c6', '#4d70a6'], label: 'A' }, { position: target, palette: ['#d1c8e4', '#a394c4', '#8170a8'], label: 'B' } ];
+    const cubes = [ { position: { x: 0, y: 0, z: 0 }, palette: ['#a0bff1', '#5783cb', '#3562a8'], label: 'A' }, { position: target, palette: ['#f3c9ad', '#df9b72', '#b97654'], label: 'B' } ];
     cubes.sort((a, b) => project(a.position).depth - project(b.position).depth);
     cubes.forEach(item => nodes.push(cube(item.position, item.palette, item.label)));
     byId('lab-world').replaceChildren(...nodes);
-    byId('lab-scene-description').textContent = `Camera at ${Math.round(state.yaw)} degrees. Purple target B is ${number(state.distance)} meters from blue anchor A, at ${state.clock} o'clock in the fixed anchor frame. Drag horizontally or use the left and right arrow keys to orbit the camera.`;
+    byId('lab-scene-description').textContent = `Camera at ${Math.round(state.yaw)} degrees. Orange target B is ${number(state.distance)} meters from blue anchor A, at ${state.clock} o'clock in the fixed anchor frame. Drag horizontally or use the left and right arrow keys to orbit the camera.`;
     const isObject = source === 'object';
-    byId('lab-relation-badge').textContent = isObject ? 'Relation updated' : 'Fixed reference frame';
-    byId('lab-relation-note').textContent = isObject ? 'Moving B changes its relation to anchor A.' : 'Spatial measurements stay constant as the camera moves.';
+    byId('lab-relation-badge').textContent = isObject ? 'RELATION UPDATED' : 'FIXED ANCHOR FRAME';
+    byId('lab-relation-note').textContent = isObject ? 'Moving B changes its relation to anchor A.' : 'The camera changes the image, not the relation.';
     clearTimeout(announceTimer);
     if (source !== 'initial') announceTimer = setTimeout(() => {
       byId('lab-announcement').textContent = isObject ? `New relation: ${number(state.distance)} m at ${state.clock} o’clock.` : `View changed. Still ${number(state.distance)} m at ${state.clock} o’clock.`;
@@ -144,7 +144,7 @@
     const verdict = byId('margin-verdict');
     verdict.textContent = error.margin < .0001 ? 'Correct answer' : error.margin >= .5 ? 'Larger error' : 'Measured error';
     verdict.dataset.level = error.margin >= .5 ? 'large' : 'small';
-    byId('margin-insight').textContent = error.margin < .0001 ? 'The candidate matches the measured truth: both error contributions are zero.' : error.distance >= 1 ? 'The distance contribution saturates at a 5× ratio. Direction still contributes independently.' : error.hours > 0 && Math.abs((G.clock(truth.clock) || 12) - (G.clock(candidate.clock) || 12)) > 6 ? 'Clock errors wrap around: 12 and 1 o’clock are neighbors. The shortest arc determines the direction error.' : 'The training preference gap grows with the measured geometric error. This value is not model confidence.';
+    byId('margin-insight').textContent = error.margin < .0001 ? 'The candidate matches the measured truth: both error contributions are zero.' : error.distance >= 1 ? 'The distance contribution saturates at a 5× ratio. Direction still contributes independently.' : error.hours > 0 && Math.abs((G.clock(truth.clock) || 12) - (G.clock(candidate.clock) || 12)) > 6 ? 'Clock errors wrap around: 12 and 1 o’clock are neighbors. The shortest arc determines the direction error.' : 'Larger geometric errors require larger preference gaps during training. The margin is not a model confidence.';
     clearTimeout(marginTimer);
     if (announce) marginTimer = setTimeout(() => { byId('margin-announcement').textContent = `Geometric margin ${error.margin.toFixed(3)}. Candidate ${number(candidate.distance)} meters at ${candidate.clock} o'clock.`; }, 220);
   }
@@ -158,13 +158,12 @@
     renderMargin(true);
   }));
   byId('lab-to-margin').addEventListener('click', () => {
-    document.querySelector('#demo-margin')?.click();
     truth = { distance: state.distance, clock: state.clock };
     byId('margin-distance').value = String(Math.round(state.distance * 1.5 * 20) / 20);
     byId('margin-direction').value = String(G.clock(state.clock + 2) || 12);
     renderMargin(true);
     clearTimeout(announceTimer);
-    byId('lab-announcement').textContent = 'Scene measurements imported into the geometric error explorer.';
+    byId('lab-announcement').textContent = 'Scene truth imported into the error explorer below.';
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     byId('margin-playground').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
     byId('margin-distance').focus({ preventScroll: true });
