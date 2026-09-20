@@ -373,4 +373,4 @@ body.modal-open { overflow: hidden; }
   .table-scroll { overflow: visible; }
 }
 
-.button-pending{color:#5a6c83;background:#f1f4f9;border-color:#dce3ed;cursor:default}.button-pending:hover{transform:none;background:#f1f4f9}.footer-links{display:flex;gap:24px;font-size:14px;color:#44638b}
+.footer-links{display:flex;gap:24px;font-size:14px;color:#44638b}
