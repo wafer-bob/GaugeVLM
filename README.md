@@ -1,44 +1,35 @@
-# GaugeVLM Project Page
+<div align="center">
 
-[Project website](https://wafer-bob.github.io/GaugeVLM/) · [Paper](assets/GaugeVLM.pdf)
+# GaugeVLM
 
-The project website for **GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions**.
+### Structuring Spatial Supervision with Measured Geometric Interventions
 
-This repository contains the website source and paper display assets only. **The research implementation release is pending.**
+Hongbo Wang · Zihan Lin · Wenkui Yang · Yuang Ai<br>
+Shiran Ge · Jie Cao · Huaibo Huang · Ran He
 
-The site includes the paper, method overview, interactive spatial and geometric-error demonstrations, benchmark result comparisons, and citation downloads. The demonstrations illustrate the method's concepts; they do not run a vision-language model.
+**[Project Homepage](https://wafer-bob.github.io/GaugeVLM/) · [Paper](assets/GaugeVLM.pdf)**
 
-## Local preview
+Research code coming soon.
 
-From the repository root, run:
+</div>
 
-```sh
-python3 -m http.server 8000 --bind 127.0.0.1
-```
+<br>
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The site is static and requires no build step or package installation.
+[![GaugeVLM: measured spatial errors, consistent relations across views, and controlled geometric interventions.](assets/images/teaser.webp)](https://wafer-bob.github.io/GaugeVLM/)
 
-## GitHub Pages
+## Overview
 
-In the repository's **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/ (root)**, then save. Keep the `assets/` directory and `.nojekyll` file in the repository root alongside `index.html`.
+**GaugeVLM** improves spatial reasoning in vision-language models by making geometric structure explicit in supervision. Controlled object and camera interventions produce linked observations with measured errors, shared spatial truths across views, and known changes in object relations.
 
-All site assets use relative paths, so the site can be hosted at a repository subpath or a custom domain.
+Its learning objective, **GaugeDPO**, combines measured preference margins, direct supervision of correct relations across views, and intervention-based constraints. GaugeVLM improves all 10 established spatial metrics over supervised fine-tuning across three model backbones. On Qwen2.5-VL-7B, it improves MSMU distance by **15.0 percentage points** and QSpatial+ by **18.9 percentage points** over GaugeSFT.
 
-## Files
+Visit the **[project homepage](https://wafer-bob.github.io/GaugeVLM/)** for the method, interactive illustrations, and results.
 
-- `index.html`: page content, authors, navigation, and citation.
-- `assets/styles.css`, `assets/labs.css`, `assets/results-interactive.css`: visual design and responsive layouts.
-- `assets/site.js`: navigation, figure viewer, and citation controls.
-- `assets/geometry.js`, `assets/labs.js`: interactive spatial and error demonstrations.
-- `assets/results.js`, `assets/results.csv`: benchmark explorer and downloadable results.
-- `assets/GaugeVLM.pdf`, `assets/figures/`, `assets/images/`: manuscript and paper figures.
-- `assets/gaugevlm.bib`: downloadable citation.
+## Code
 
-Results are transcribed from the supplied manuscript; displayed gains are calculated from its rounded scores.
+The research implementation is being prepared for release. Updates will be posted here.
 
 ## Citation
-
-The following is a provisional manuscript citation. Update it and `assets/gaugevlm.bib` when the final publication or arXiv record is available.
 
 ```bibtex
 @misc{wang2026gaugevlm,
@@ -48,6 +39,7 @@ The following is a provisional manuscript citation. Update it and `assets/gaugev
              and Yuang Ai and Shiran Ge and Jie Cao
              and Huaibo Huang and Ran He},
   year    = {2026},
+  url     = {https://github.com/wafer-bob/GaugeVLM},
   note    = {Preprint}
 }
 ```

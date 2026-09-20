@@ -93,7 +93,13 @@
   download.id = 'results-download';
   download.type = 'button';
   controls.append(filter.label, sort.label, compare, download);
-  panel.prepend(controls);
+  const options = element('details', 'results-explorer-options');
+  const optionsSummary = element('summary', '', 'Filter, compare & download');
+  const optionsIcon = element('span', '', '+');
+  optionsIcon.setAttribute('aria-hidden', 'true');
+  optionsSummary.append(optionsIcon);
+  options.append(optionsSummary, controls);
+  panel.prepend(options);
   const note = element('p', 'results-explorer-note');
   note.id = 'results-explorer-note';
   if (chartContainer) {

@@ -62,6 +62,36 @@
     copyButton.innerHTML = copied ? 'Copied <span aria-hidden="true">✓</span>' : 'Copy citation <span aria-hidden="true">⧉</span>';
   });
 
+  const demoTabs = [...document.querySelectorAll('[data-demo]')];
+  function showDemo(tab, focus = false) {
+    demoTabs.forEach(button => {
+      const active = button === tab;
+      button.setAttribute('aria-selected', String(active));
+      button.tabIndex = active ? 0 : -1;
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
+    });
+    if (focus) tab.focus({ preventScroll: true });
+  }
+  demoTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => showDemo(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % demoTabs.length;
+      if (event.key === 'ArrowLeft') next = (index - 1 + demoTabs.length) % demoTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = demoTabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      showDemo(demoTabs[next], true);
+    });
+  });
+  function showHashDemo() {
+    if (location.hash === '#margin-playground') showDemo(document.getElementById('demo-margin'));
+    if (location.hash === '#playground') showDemo(document.getElementById('demo-scene'));
+  }
+  showHashDemo();
+  window.addEventListener('hashchange', showHashDemo);
+
   const links = [...document.querySelectorAll('.nav-shell nav a')];
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
