@@ -1,6 +1,11 @@
 <div align="center">
 
-<img src=".github/assets/readme-header.svg" alt="GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/readme-header-dark.svg">
+  <img src=".github/assets/readme-header.svg" alt="GaugeVLM" width="100%">
+</picture>
+
+### Structuring Spatial Supervision<br>with Measured Geometric Interventions
 
 <br>
 

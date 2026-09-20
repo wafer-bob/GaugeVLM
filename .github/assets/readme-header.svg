@@ -1,9 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="230" viewBox="0 0 1080 230" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="180" viewBox="0 0 1080 180" role="img" aria-labelledby="title desc">
 <title id="title">GaugeVLM</title><desc id="desc">Structuring Spatial Supervision with Measured Geometric Interventions.</desc>
 <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f2f7fd"/><stop offset=".55" stop-color="#f8f9fc"/><stop offset="1" stop-color="#f2f0fa"/></linearGradient><linearGradient id="titleGradient"><stop stop-color="#2f6f9f"/><stop offset="1" stop-color="#7360a4"/></linearGradient></defs>
-<rect width="1080" height="230" rx="18" fill="url(#bg)"/>
+<rect width="1080" height="180" rx="18" fill="url(#bg)"/>
 <g fill="none" stroke="#ccd6e9" stroke-width="1.4" opacity=".85"><path d="m55 51 40-23 40 23v46l-40 23-40-23zM55 51l40 23 40-23M95 74v46"/><path d="m945 140 40-23 40 23v46l-40 23-40-23zM945 140l40 23 40-23M985 163v46"/><path d="m50 159 31-18 31 18v36l-31 18-31-18zM50 159l31 18 31-18M81 177v36" opacity=".6"/><path d="m978 36 27-15 27 15v31l-27 15-27-15zM978 36l27 16 27-16M1005 52v30" opacity=".6"/></g>
-<text x="540" y="103" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="67" font-weight="700" letter-spacing="-2.4" fill="url(#titleGradient)">GaugeVLM</text>
-<text x="540" y="149" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="500" fill="#384861">Structuring Spatial Supervision</text>
-<text x="540" y="183" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="500" fill="#384861">with Measured Geometric Interventions</text>
+<text x="540" y="122" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="94" font-weight="700" letter-spacing="-3.2" fill="url(#titleGradient)">GaugeVLM</text>
 </svg>
