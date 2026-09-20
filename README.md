@@ -1,5 +1,7 @@
 # GaugeVLM Project Page
 
+[Project website](https://wafer-bob.github.io/GaugeVLM/) · [Paper](assets/GaugeVLM.pdf)
+
 The project website for **GaugeVLM: Structuring Spatial Supervision with Measured Geometric Interventions**.
 
 This repository contains the website source and paper display assets only. **The research implementation release is pending.**
