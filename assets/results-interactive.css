@@ -1,0 +1,167 @@
+/* Readable, keyboard-accessible controls for the published benchmark results. */
+.results-explorer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px 16px;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--line, #dfe6ef);
+  background: #f8faff;
+}
+.results-control {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+.results-control > span {
+  color: #526784;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.results-control select,
+.results-compare,
+.results-download {
+  min-height: 48px;
+  max-width: 100%;
+  border: 1px solid #ced9e9;
+  border-radius: 8px;
+  color: #3c557a;
+  background: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.results-control select {
+  width: 100%;
+  padding: 11px 32px 11px 14px;
+  cursor: pointer;
+}
+.results-compare,
+.results-download {
+  padding: 11px 16px;
+  cursor: pointer;
+}
+.results-compare { border-style: dashed; }
+.results-compare::before {
+  display: inline-block;
+  content: '+';
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+.results-compare[aria-pressed="true"] {
+  color: #fff;
+  background: #3768b8;
+  border-style: solid;
+  border-color: #3768b8;
+}
+.results-compare[aria-pressed="true"]::before { content: '✓'; }
+.results-download { margin-left: auto; color: #315e9f; }
+.results-control select:hover,
+.results-compare:hover,
+.results-download:hover { border-color: #3768b8; }
+.results-control select:focus-visible,
+.results-compare:focus-visible,
+.results-download:focus-visible {
+  outline: 3px solid #88b0e8;
+  outline-offset: 3px;
+}
+#results-panel .chart-heading {
+  gap: 16px 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px 32px 0;
+}
+#results-panel .chart-heading h3 { font-size: 18px; line-height: 1.45; }
+#results-panel .chart-legend {
+  gap: 12px 22px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#results-panel .chart-legend span { gap: 8px; }
+#results-panel .chart-legend i { width: 10px; height: 10px; flex-shrink: 0; }
+#results-panel .result-charts,
+#results-panel .result-charts.is-filtered {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 44px;
+  padding: 32px;
+}
+#results-panel .result-charts article { min-width: 0; }
+#results-panel .result-charts h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+#results-panel .result-charts h4 > span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #617087;
+  line-height: 1.5;
+}
+#results-panel .bar-row {
+  grid-template-columns: minmax(0, 1fr) 56px;
+  gap: 8px 12px;
+  margin-top: 16px;
+}
+#results-panel .bar-label {
+  color: #526784;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#results-panel .bar-value {
+  font-size: 14px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+#results-panel .bar-track { height: 14px; border-radius: 4px; }
+#results-panel .bar { border-radius: 4px; }
+#results-panel .bar.model-qwen, .legend-qwen { background: #3768b8; }
+#results-panel .bar.model-glm, .legend-glm { background: #37a3a0; }
+#results-panel .bar.model-pixtral, .legend-pixtral { background: #9a7cb9; }
+.results-explorer-note {
+  margin: 0 32px 28px;
+  color: #617087;
+  font-size: 14px;
+  line-height: 1.75;
+}
+@media (max-width: 1050px) {
+  .results-explorer-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .results-download { margin-left: 0; }
+  #results-panel .result-charts,
+  #results-panel .result-charts.is-filtered { gap: 32px; }
+}
+@media (max-width: 700px) {
+  #results-panel .result-charts,
+  #results-panel .result-charts.is-filtered { grid-template-columns: minmax(0, 1fr); }
+  #results-panel .chart-heading { align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .results-explorer-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 24px 20px;
+  }
+  .results-control select { font-size: 16px; }
+  .results-compare, .results-download { width: 100%; font-size: 15px; }
+  #results-panel .chart-heading { padding: 24px 20px 0; }
+  #results-panel .chart-legend { gap: 10px 18px; }
+  #results-panel .result-charts,
+  #results-panel .result-charts.is-filtered {
+    gap: 32px;
+    padding: 28px 20px;
+  }
+  .results-explorer-note { margin: 0 20px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #results-panel .bar { transition: none; }
+}
