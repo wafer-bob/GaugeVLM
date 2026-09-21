@@ -1,0 +1,34 @@
+[
+  {
+    "institution": "casia",
+    "source": "User-supplied file",
+    "source_filename": "casia_Logo.jpg",
+    "adjustment": "None; original file copied without modifications.",
+    "updated": "2026-09-21",
+    "sha256": "906d126eb6c729c01c923f2690e15d194b22838bb8a95c7b6f4539e713448fc2"
+  },
+  {
+    "institution": "ucas",
+    "source": "User-supplied file",
+    "source_filename": "UCAS_logo.png",
+    "adjustment": "None; original file copied without modifications.",
+    "updated": "2026-09-21",
+    "sha256": "0319ce7d975db835f7c8cb0acb2141604096842ac2c9b600dd4fb989e0d71a28"
+  },
+  {
+    "institution": "nus",
+    "official_page": "https://www.comp.nus.edu.sg/",
+    "source_image": "https://www.comp.nus.edu.sg/wp-content/uploads/2023/09/nus-computing-logo-1.png",
+    "adjustment": "Cropped to university crest; omitted Computing and university wordmarks.",
+    "verified": "2026-09-21",
+    "sha256": "385a1ce1cd530f26eb454a155f690514e3e38f99ae9068b4abe0aca965f4e180"
+  },
+  {
+    "institution": "cuhk",
+    "official_page": "https://www.cuhk.edu.hk/english/",
+    "source_image": "https://www.cuhk.edu.hk/english/images/cuhk_logo_2x.png?20221027",
+    "adjustment": "Cropped to university crest; omitted university wordmarks.",
+    "verified": "2026-09-21",
+    "sha256": "aedfafff4ad5329a6c21ba46851939ea596596da026648835c6b9c7f66596494"
+  }
+]
