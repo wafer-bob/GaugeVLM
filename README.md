@@ -10,17 +10,17 @@
 <br>
 
 <p align="center">
-  <strong>Hongbo Wang<sup>1,2</sup> · Zihan Lin<sup>1,3</sup> · Wenkui Yang<sup>1,3</sup> · Shiran Ge<sup>1,2</sup> · Yuang Ai<sup>4</sup></strong><br>
+  <strong>Hongbo Wang<sup>1,2</sup> · Zihan Lin<sup>1,3</sup> · Wenkui Yang<sup>1,3</sup> · Shiran Ge<sup>1,2,4</sup> · Yuang Ai<sup>5</sup></strong><br>
   <strong>Jie Cao<sup>1,2</sup> · Huaibo Huang<sup>1,2</sup> · Ran He<sup>1,2,3,†</sup></strong>
 </p>
 
 <sup>1</sup> NLPR &amp; MAIS, Institute of Automation, Chinese Academy of Sciences<br>
 <sup>2</sup> School of Artificial Intelligence, UCAS · <sup>3</sup> School of Advanced Interdisciplinary Sciences, UCAS<br>
-<sup>4</sup> The Chinese University of Hong Kong · <sup>†</sup> Corresponding author
+<sup>4</sup> National University of Singapore · <sup>5</sup> The Chinese University of Hong Kong · <sup>†</sup> Corresponding author
 
 <a href="https://wafer-bob.github.io/GaugeVLM/"><img src=".github/assets/project-page.svg" alt="Project Page" height="40"></a>
 &nbsp;
-<a href="https://wafer-bob.github.io/GaugeVLM/assets/GaugeVLM.pdf"><img src=".github/assets/paper.svg" alt="Read the paper PDF" height="40"></a>
+<a href="https://wafer-bob.github.io/GaugeVLM/assets/GaugeVLM.pdf?v=d7d2a331"><img src=".github/assets/paper.svg" alt="Read the paper PDF" height="40"></a>
 
 <br><br>
 
