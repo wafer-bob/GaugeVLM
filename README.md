@@ -9,8 +9,10 @@
 
 <br>
 
-**Hongbo Wang<sup>1,2</sup> · Zihan Lin<sup>1,3</sup> · Wenkui Yang<sup>1,3</sup> · Yuang Ai<sup>4</sup>**<br>
-**Shiran Ge<sup>1,2</sup> · Jie Cao<sup>1,2</sup> · Huaibo Huang<sup>1,2</sup> · Ran He<sup>1,2,3,†</sup>**
+<p align="center">
+  <strong>Hongbo Wang<sup>1,2</sup> · Zihan Lin<sup>1,3</sup> · Wenkui Yang<sup>1,3</sup> · Shiran Ge<sup>1,2</sup> · Yuang Ai<sup>4</sup></strong><br>
+  <strong>Jie Cao<sup>1,2</sup> · Huaibo Huang<sup>1,2</sup> · Ran He<sup>1,2,3,†</sup></strong>
+</p>
 
 <sup>1</sup> NLPR &amp; MAIS, Institute of Automation, Chinese Academy of Sciences<br>
 <sup>2</sup> School of Artificial Intelligence, UCAS · <sup>3</sup> School of Advanced Interdisciplinary Sciences, UCAS<br>
@@ -140,7 +142,7 @@ If you find GaugeVLM useful for your research, please consider citing our work.
   title   = {GaugeVLM: Structuring Spatial Supervision
              with Measured Geometric Interventions},
   author  = {Hongbo Wang and Zihan Lin and Wenkui Yang
-             and Yuang Ai and Shiran Ge and Jie Cao
+             and Shiran Ge and Yuang Ai and Jie Cao
              and Huaibo Huang and Ran He},
   year    = {2026},
   url     = {https://github.com/wafer-bob/GaugeVLM},
