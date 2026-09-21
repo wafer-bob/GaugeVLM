@@ -9,11 +9,11 @@
 
 <br>
 
-**Hongbo Wang · Zihan Lin · Wenkui Yang · Yuang Ai**<br>
-**Shiran Ge · Jie Cao · Huaibo Huang · Ran He**
+**Hongbo Wang<sup>1,2</sup> · Zihan Lin<sup>1,3</sup> · Wenkui Yang<sup>1,3</sup> · Yuang Ai<sup>4</sup>**<br>
+**Shiran Ge<sup>1,2</sup> · Jie Cao<sup>1,2</sup> · Huaibo Huang<sup>1,2</sup> · Ran He<sup>1,2,3,†</sup>**
 
-Institute of Automation, Chinese Academy of Sciences · UCAS<br>
-The Chinese University of Hong Kong
+<sup>1</sup> NLPR &amp; MAIS, Institute of Automation, Chinese Academy of Sciences · <sup>2</sup> School of Artificial Intelligence, UCAS<br>
+<sup>3</sup> School of Advanced Interdisciplinary Sciences, UCAS · <sup>4</sup> The Chinese University of Hong Kong · <sup>†</sup> Corresponding author
 
 <a href="https://wafer-bob.github.io/GaugeVLM/"><img src=".github/assets/project-page.svg" alt="Project Page" height="40"></a>
 &nbsp;
@@ -103,8 +103,6 @@ GaugeVLM teaches vision-language models to **measure spatial errors**, **stay co
 | BLINK · Accuracy | 37.0 | **42.6** | **+5.6** |
 
 </details>
-
-<sub>Source: spatial understanding results in the paper. Gains are computed from the displayed, rounded scores. The 10 metrics above exclude Constancy-Bench probes.</sub>
 
 [Explore the interactive results](https://wafer-bob.github.io/GaugeVLM/#results) · [Download the result data](assets/results.csv)
 
